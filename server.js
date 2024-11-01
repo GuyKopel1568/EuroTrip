@@ -4,18 +4,28 @@ const path = require("path");
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
-  // Set the file path to your HTML file
-  const filePath = path.join(__dirname, "public", "home_page", "home_page.html");
+  // Set the base directory to "public/home_page"
+  const baseDir = path.join(__dirname, "public", "home_page");
 
-  // Read the HTML file
+  // Construct the file path based on the request URL
+  let filePath = path.join(baseDir, req.url === "/" ? "home_page.html" : req.url);
+
+  // Get the file extension to determine the content type
+  const extname = path.extname(filePath);
+  let contentType = "text/html"; // Default to HTML
+
+  // Set content type based on file extension
+  if (extname === ".css") contentType = "text/css";
+
+  // Read and serve the requested file
   fs.readFile(filePath, (err, content) => {
     if (err) {
-      // Handle errors if the file is not found or other issues
-      res.writeHead(500, { "Content-Type": "text/plain" });
-      res.end("Server Error: Unable to load the requested file.");
+      // If the file is not found, return a 404 error
+      res.writeHead(404, { "Content-Type": "text/plain" });
+      res.end("404 Not Found");
     } else {
-      // Serve the HTML file
-      res.writeHead(200, { "Content-Type": "text/html" });
+      // If the file is found, serve it
+      res.writeHead(200, { "Content-Type": contentType });
       res.end(content);
     }
   });
