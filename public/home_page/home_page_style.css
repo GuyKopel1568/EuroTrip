@@ -5,12 +5,20 @@
     background-color: #2F3645;
   }
 
+  #home_page_header_and_phrase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+}
+
 #home_page_header{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     color: #939185;
+    font-size: 5rem;
 }
 
 navbar{
@@ -57,4 +65,14 @@ li:hover::after {
 
 li:active{
     transform: translateY(5px);
+}
+
+
+
+#images_circle{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: spin 10s linear infinite; 
 }
