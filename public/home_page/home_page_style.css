@@ -49,7 +49,7 @@ li {
 
 li:hover {
     color: #DFF2EB;
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0px 0px 20px white;
     cursor: pointer;
 }
 
@@ -58,29 +58,18 @@ li:active {
     transform: translateY(4px);
 }
 
-/* Blurred box container */
-.blurred-box {
-    display: inline-block; /* To wrap just around the button */
-    padding: 15px; /* Padding around the button */
-    backdrop-filter: blur(10px); /* Adjust the blur level */
-    background: rgba(47, 54, 69, 0.5); /* Semi-transparent background */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
-}
-
-/* Button styling */
 #register_ot_signup_button {
     color: #DFF2EB;
     font-size: 2rem;
     padding: 10px 20px;
     background-color: transparent;
-    border: none; /* Remove default button border */
+    border: none; 
     border-radius: 20px;
     cursor: pointer;
 }
 
 #register_ot_signup_button:hover {
-    background-color: rgba(223, 242, 235, 0.1); /* Light hover effect */
+    background-color: rgba(223, 242, 235, 0.178); 
 }
 
 
@@ -93,7 +82,7 @@ li:active {
 }
 /* END NAVBAR */
 
-
+/* intro section */
 #home_page_header_and_phrase {
     display: flex;
     flex-direction: column;
@@ -102,53 +91,47 @@ li:active {
     height: 100vh;
     text-align: center;
     z-index: 10;
+    margin-top: 10px;
 }
 
 #home_page_header {
-    color: #F0F0F0;
     font-size: 10rem;
-    z-index: 10;
-    margin-top: 50px;
+    font-weight: bold;
+    background: linear-gradient(to right, #38707B, #B1CACE, #525649, #946231 ); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
+
 
 #home_page_phrase {
     color: #F0F0F0;
     font-size: 2rem;
-    margin-top: 10px;
+    margin-bottom: 20px;
     z-index: 10;
 }
 
-#images_circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 50%;
-    animation: spin 30s linear infinite;
-    margin-top: -250px; 
+#lets_start_button{
+    color: #DFF2EB;
+    font-size: 2rem;
+    padding: 10px 20px;
+
+    background-color: rgba(223, 242, 235, 0.178); 
+    border: none; 
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 10;
 }
 
-.home_page_img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    transform-origin: 50px; 
-    margin: 50px;
+#lets_start_button:hover {
+    background-color: rgba(223, 242, 235, 0.178); 
 }
 
-/* Position each image around the circle */
-.home_page_img:nth-child(1) { transform: rotate(0deg) translate(200px); }
-.home_page_img:nth-child(2) { transform: rotate(40deg) translate(200px); }
-.home_page_img:nth-child(3) { transform: rotate(80deg) translate(200px); }
-.home_page_img:nth-child(4) { transform: rotate(120deg) translate(200px); }
-.home_page_img:nth-child(5) { transform: rotate(160deg) translate(200px); }
-.home_page_img:nth-child(6) { transform: rotate(200deg) translate(200px); }
-.home_page_img:nth-child(7) { transform: rotate(240deg) translate(200px); }
-.home_page_img:nth-child(8) { transform: rotate(280deg) translate(200px); }
-.home_page_img:nth-child(9) { transform: rotate(320deg) translate(200px); }
-
-/* Spinning animation */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+#lets_start_button:active {
+    color: #DFF2EB;
+    text-shadow: 0px 0px 10px white;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(4px);
 }
