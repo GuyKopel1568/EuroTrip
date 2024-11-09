@@ -15,7 +15,24 @@ const server = http.createServer((req, res) => {
   let contentType = "text/html"; // Default to HTML
 
   // Set content type based on file extension
-  if (extname === ".css") contentType = "text/css";
+  switch (extname) {
+    case ".css":
+      contentType = "text/css";
+      break;
+    case ".js":
+      contentType = "application/javascript";
+      break;
+    case ".jpg":
+    case ".jpeg":
+      contentType = "image/jpeg";
+      break;
+    case ".png":
+      contentType = "image/png";
+      break;
+    case ".ico":
+      contentType = "image/x-icon";
+      break;
+  }
 
   // Read and serve the requested file
   fs.readFile(filePath, (err, content) => {

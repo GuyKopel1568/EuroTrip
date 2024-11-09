@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EuroTrip | Home Page</title>
-  <link rel="stylesheet" href="home_page_style.css">
-</head>
-<body>
-  <navbar>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-    </ul>
-  </navbar>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EuroTrip | Home Page</title>
+    <link rel="stylesheet" href="home_page_style.css" />
+    <link rel="icon" href="/path/to/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <navbar>
+      <ul>
+        <li>EUROTRIP</li>
+        <li>Item 2</li>
+        <li>CONTACT  US</li>
+        <li>ABOUT US</li>
+        <li id="register_ot_signup_button">REGISTER/SIGN-UP</li>
+      </ul>
+    </navbar>
 
-  <div id="home_page_header_and_phrase">  
-    <h1 id="home_page_header">EuroTrip</h1>
-    <h3 id="home_page_phrase">Let us build you dream</h3>
-  </div>
+    <div data-aos="zoom-in" id="home_page_header_and_phrase">
+      <h1 id="home_page_header">EuroTrip</h1>
+      <h3 id="home_page_phrase">Let us build you dream</h3>
+    </div>
 
-  <div id="images_circle">
-    <img src="./home_page_images/europe.png" alt="europe_map">;
-    <img src="./home_page_images/colosseum.png" alt="colosseum">;
-    <img src="./home_page_images/louvre.png" alt="louvre">;
-    <img src="./home_page_images/pisa.png" alt="pisa_map">;
-    <img src="./home_page_images/notre-dame.png" alt="notre_dame">;
-    <img src="./home_page_images/big-ben.png" alt="big_ben">;
-  </div>
-  
-  <script src="server.js"></script>
-</body>
+    <!-- <div id="images_circle">
+      <img
+        class="home_page_img"
+        src="./home_page_images/europe.png"
+        alt="europe_map"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/colosseum.png"
+        alt="colosseum"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/louvre.png"
+        alt="louvre"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/notre-dame.png"
+        alt="notre_dame"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/big-ben.png"
+        alt="big_ben"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/pisa.png"
+        alt="pisa_map"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/moulin-rouge.png"
+        alt="moulin-rouge"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/brandenburg-gate.png"
+        alt="brandenburg-gate"
+      />
+      <img
+        class="home_page_img"
+        src="./home_page_images/stonehenge.png"
+        alt="stonehenge"
+      />
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+  </body>
 </html>
