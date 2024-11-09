@@ -14,9 +14,8 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
-
 
 /* START NAVBAR */
 navbar {
@@ -84,6 +83,15 @@ li:active {
     transform: translateY(4px);
 }
 
+#hamburger_icon{
+    color: #DFF2EB;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    right: 2vw;
+    margin: 20px;
+}
 /* END NAVBAR */
 
 /* intro section */

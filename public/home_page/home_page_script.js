@@ -1,11 +1,14 @@
 function adjust_navbar_to_window_size() {
     const navbar = document.getElementById("navbar");
+    const hamburger_icon = document.getElementById("hamburger_icon");
     const window_size = window.innerWidth;
-    console.log(window_size);   
-    if(window_size < 850){
+
+    if (window_size < 850) {
         navbar.classList.add("hidden");
-    }else{
+        hamburger_icon.classList.remove("hidden");
+    } else {
         navbar.classList.remove("hidden");
+        hamburger_icon.classList.add("hidden");
     }
 }
 
