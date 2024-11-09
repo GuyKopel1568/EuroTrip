@@ -13,22 +13,26 @@ body {
     overflow-x: hidden;
 }
 
+.hidden {
+    display: none;
+}
+
+
 /* START NAVBAR */
 navbar {
     position: absolute;
     top: 0;
-    width: calc(100% - 60px); 
+    width: calc(100% - 5vw);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px;
+    margin: 2vw; 
     z-index: 100;
     backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.034); 
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2); 
+    background: rgba(0, 0, 0, 0.034);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
     border-radius: 20px;
 }
-
 
 ul {
     display: flex;
@@ -37,13 +41,13 @@ ul {
     list-style-type: none;
     width: 80%;
     border-radius: 20px;
-    padding: 10px;
+    padding: 1vw; 
 }
 
 li {
     color: #F0F0F0;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: clamp(1.2rem, 2vw, 2rem); 
+    padding: 0.5vw 1vw; 
     background-color: transparent;
 }
 
@@ -60,18 +64,17 @@ li:active {
 
 #register_ot_signup_button {
     color: #DFF2EB;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    padding: 0.5vw 1vw;
     background-color: transparent;
-    border: none; 
+    border: none;
     border-radius: 20px;
     cursor: pointer;
 }
 
 #register_ot_signup_button:hover {
-    background-color: rgba(223, 242, 235, 0.178); 
+    background-color: rgba(223, 242, 235, 0.178);
 }
-
 
 #register_ot_signup_button:active {
     color: #DFF2EB;
@@ -80,6 +83,7 @@ li:active {
     transition: transform 0.2s ease-in-out;
     transform: translateY(4px);
 }
+
 /* END NAVBAR */
 
 /* intro section */
@@ -95,37 +99,36 @@ li:active {
 }
 
 #home_page_header {
-    font-size: 10rem;
+    font-size: clamp(4rem, 8vw, 10rem); 
     font-weight: bold;
-    background: linear-gradient(to right, #38707B, #B1CACE, #525649, #946231 ); 
+    background: linear-gradient(to right, #38707B, #B1CACE, #525649, #946231);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 }
-
 
 #home_page_phrase {
     color: #F0F0F0;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2.5vw, 2rem); 
     margin-bottom: 20px;
     z-index: 10;
 }
 
-#lets_start_button{
+#lets_start_button {
     color: #DFF2EB;
-    font-size: 2rem;
-    padding: 10px 20px;
-
-    background-color: rgba(223, 242, 235, 0.178); 
-    border: none; 
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    padding: 0.8vw 1.5vw; 
+    background-color: rgba(223, 242, 235, 0.178);
+    border: none;
     border-radius: 20px;
     cursor: pointer;
     z-index: 10;
 }
 
 #lets_start_button:hover {
-    background-color: rgba(223, 242, 235, 0.178); 
+    background-color: rgba(223, 242, 235, 0.178);
+    text-shadow: 0px 0px 10px white;
+    box-shadow: 0px 0px 10px white;
 }
 
 #lets_start_button:active {
