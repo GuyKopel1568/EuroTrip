@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="home_page_style.css" />
   </head>
   <body>
-    <navbar id="navbar">
-      <ul>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <ul id="navbar_list">
         <li>EUROTRIP</li>
         <li>SALE</li>
         <li>CONTACT US</li>
         <li>ABOUT US</li>
         <li id="register_ot_signup_button">REGISTER/SIGN-UP</li>
       </ul>
-    </navbar>
+    </nav>
+
+    <!-- Hamburger Icon -->
     <svg
+      onclick="open_close_navbar_icon()"
       id="hamburger_icon"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6"
+      class="size-6 hidden"
     >
       <path
         stroke-linecap="round"
@@ -32,11 +36,13 @@
       />
     </svg>
 
+    <!-- Page Header and Phrase -->
     <div id="home_page_header_and_phrase">
       <h1 id="home_page_header">EuroTrip</h1>
-      <h3 id="home_page_phrase">Let us build you dream</h3>
-      <button id="lets_start_button">Lets Start</button>
+      <h3 id="home_page_phrase">Let us build your dream</h3>
+      <button id="lets_start_button">Let's Start</button>
     </div>
+    
+    <script src="home_page_script.js"></script>
   </body>
-  <script src="home_page_script.js"></script>
 </html>
