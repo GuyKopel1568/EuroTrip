@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EuroTrip | Home Page</title>
-    <!-- Ensure the correct path for CSS -->
     <link rel="stylesheet" href="/home_page/home_page_style.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <div id="video_background">
+      <video autoplay muted loop>
+        <source src="./home_page_images/page_background_animation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
     <nav id="navbar">
       <ul id="navbar_list">
         <li><a href="/">EUROTRIP</a></li>
@@ -19,7 +24,6 @@
       </ul>
     </nav>
 
-    <!-- Hamburger Icon -->
     <svg
       onclick="open_close_navbar_icon()"
       id="hamburger_icon"
@@ -37,14 +41,12 @@
       />
     </svg>
 
-    <!-- Page Header and Phrase -->
     <div id="home_page_header_and_phrase">
       <h1 id="home_page_header">EuroTrip</h1>
       <h3 id="home_page_phrase">Let us build your dream</h3>
       <button id="lets_start_button">Let's Start</button>
     </div>
-    
-    <!-- Ensure the correct path for JavaScript -->
+
     <script src="/home_page/home_page_script.js"></script>
   </body>
 </html>
