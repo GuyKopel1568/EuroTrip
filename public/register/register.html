@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EuroTrip | Register</title>
     <link rel="stylesheet" href="./register_style.css">
+    <link rel="stylesheet" href="/navbar/navbar_styles.css">
 </head>
 <body>
-    <h1>REGISTER</h1>
+    <div id="navbar-placeholder"></div> <!-- Navbar placeholder -->
+
     <div id="input_fields">
+        <h1>REGISTER</h1>
         <div class="input-group">
             <input type="text" id="first_name" class="input" required>
             <label for="first_name" class="label">First Name</label>
@@ -40,6 +43,8 @@
         <button onclick="register()">Register</button>
         <p>Already have an account? <a href="../login/login.html">Login</a></p>
     </div>
+
+    <script src="./register.js"></script>
+    <script src="/navbar/navbar.js"></script>
 </body>
-<script src="./register.js"></script>
 </html>

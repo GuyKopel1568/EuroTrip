@@ -1,73 +1,66 @@
-/* General Navbar Styles */
-#navbar {
-    position: absolute;
-    top: 0;
-    width: calc(100% - 5vw);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2vw;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.034);
-    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    transition: all 0.3s ease;
+function adjust_navbar_to_window_size() {
+  const navbar = document.getElementById("navbar");
+  const navbar_list = document.getElementById("navbar_list");
+  const hamburger_icon = document.getElementById("hamburger_icon");
+  const window_size = window.innerWidth;
+
+  console.log("Window size:", window_size);
+
+  if (!navbar || !navbar_list || !hamburger_icon) {
+    console.error("Navbar elements not found");
+    return;
   }
-  
-  #navbar_list {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+
+  // Toggle based on screen size
+  if (window_size < 850) {
+    console.log("Switching to hamburger view");
+    navbar_list.style.display = "none"; // Hide navbar list
+    hamburger_icon.style.display = "block"; // Show hamburger icon
+  } else {
+    console.log("Switching to full navbar view");
+    navbar_list.style.display = "flex"; // Show navbar list
+    hamburger_icon.style.display = "none"; // Hide hamburger icon
   }
-  
-  #navbar_list li {
-    margin: 0;
+
+  console.log("Hamburger Icon Style:", window.getComputedStyle(hamburger_icon).display);
+}
+
+function open_close_navbar_icon() {
+  const navbar = document.getElementById("navbar");
+  const navbar_list = document.getElementById("navbar_list");
+
+  if (!navbar || !navbar_list) {
+    console.error("Navbar elements not found");
+    return;
   }
-  
-  #navbar_list li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: black;
+
+  if (navbar_list.style.display === "none") {
+    navbar_list.style.display = "block";
+    console.log("Opening navbar list");
+  } else {
+    navbar_list.style.display = "none";
+    console.log("Closing navbar list");
   }
-  
-  #hamburger_icon {
-    display: none; /* Hidden by default for large screens */
-    cursor: pointer;
-    z-index: 200;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-  
-  /* Responsive Design for Smaller Screens */
-  @media screen and (max-width: 768px) {
-    #hamburger_icon {
-      display: block; /* Show hamburger icon */
-    }
-  
-    #navbar_list {
-      display: none; /* Hide the navbar list initially */
-      flex-direction: column;
-      position: absolute;
-      top: 4rem;
-      right: 1rem;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
-      border-radius: 10px;
-    }
-  
-    #navbar_list.active {
-      display: flex; /* Show the navbar list when active */
-    }
-  
-    #navbar_list li {
-      margin: 0.5rem 0; /* Add spacing between menu items */
-    }
-  
-    #navbar_list li a {
-      color: white; /* White text on mobile */
-    }
-  }
-  
+}
+
+function loadNavbar() {
+  fetch("/navbar/navbar.html")
+    .then((response) => {
+      if (!response.ok) throw new Error("Navbar HTML file not found.");
+      return response.text();
+    })
+    .then((data) => {
+      const navbarPlaceholder = document.getElementById("navbar-placeholder");
+      if (navbarPlaceholder) {
+        navbarPlaceholder.innerHTML = data;
+        console.log("Navbar loaded successfully");
+        adjust_navbar_to_window_size();
+        window.onresize = adjust_navbar_to_window_size;
+      }
+    })
+    .catch((error) => console.error("Error loading navbar:", error));
+}
+
+window.onload = () => {
+  loadNavbar();
+};

@@ -5,12 +5,28 @@
 }
 
 body {
-  background-image: url("./home_page_images/page_background.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#video_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#video_background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hidden {
@@ -104,7 +120,6 @@ li:hover {
   height: 100vh;
   text-align: center;
   z-index: 10;
-  margin-top: 10px;
 }
 
 #home_page_header {
@@ -121,7 +136,6 @@ li:hover {
   color: #f0f0f0;
   font-size: clamp(1.2rem, 2.5vw, 2rem);
   margin-bottom: 20px;
-  z-index: 10;
 }
 
 #lets_start_button {
@@ -132,11 +146,10 @@ li:hover {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  z-index: 10;
 }
 
 #lets_start_button:hover {
-  background-color: rgba(223, 242, 235, 0.178);
+  background-color: rgba(223, 242, 235, 0.2);
   text-shadow: 0px 0px 10px white;
   box-shadow: 0px 0px 10px white;
 }
